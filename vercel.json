@@ -1,0 +1,42 @@
+{
+    "version": 2,
+    "functions": {
+        "api/index.php": {
+            "runtime": "vercel-php@0.7.5"
+        }
+    },
+    "routes": [
+        {
+            "src": "/build/(.*)",
+            "dest": "/public/build/$1"
+        },
+        {
+            "src": "/(css|js|images|favicon.ico|robots.txt)(.*)",
+            "dest": "/public/$1$2"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
+        }
+    ],
+    "env": {
+        "APP_ENV": "production",
+        "APP_KEY": "base64:DjFlFy5zQTsWjWzdm5QRlI8Ujjf6Tya+HTm1KQ7kcno=",
+        "DB_CONNECTION": "mysql",
+        "DB_HOST": "tp1r34.h.filess.io",
+        "DB_PORT": "61002",
+        "DB_DATABASE": "test_liontrain",
+        "DB_USERNAME": "test_liontrain",
+        "DB_PASSWORD": "91d188371fa01e8a90d01de5a97c842042e6164b",
+        "APP_DEBUG": "false",
+        "LOG_CHANNEL": "stderr",
+        "VIEW_COMPILED_PATH": "/tmp",
+        "APP_CONFIG_CACHE": "/tmp/config.php",
+        "APP_EVENTS_CACHE": "/tmp/events.php",
+        "APP_PACKAGES_CACHE": "/tmp/packages.php",
+        "APP_ROUTES_CACHE": "/tmp/routes.php",
+        "APP_SERVICES_CACHE": "/tmp/services.php",
+        "CACHE_DRIVER": "array",
+        "SESSION_DRIVER": "cookie"
+    }
+}

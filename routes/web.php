@@ -1,15 +1,10 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('deploy', [
-        'appName' => config('app.name', 'Laravel'),
-        'environment' => config('app.env', 'production'),
-        'phpVersion' => PHP_VERSION,
-        'laravelVersion' => app()->version(),
-        'host' => request()->getHost(),
-    ]);
+    return redirect()->route('books.index');
 });
 
 Route::get('/healthz', function () {
@@ -21,3 +16,5 @@ Route::get('/healthz', function () {
         'laravel' => app()->version(),
     ]);
 });
+
+Route::resource('books', BookController::class);
